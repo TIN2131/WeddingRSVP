@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry You Can't Make It</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #808080;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #8B0000;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: #2F4F4F;
+            font-size: 1.2rem;
+        }
+        .rain {
+            position: absolute;
+            width: 2px;
+            height: 50px;
+            background-color: #6495ED;
+            animation: fall 0.5s linear infinite;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Boo!</h1>
+        <p>We'll miss you, but thank you for letting us know.</p>
+        <p>We love you anyway! 💖</p>
+    </div>
+    <script>
+        for (let i = 0; i < 100; i++) {
+            const rain = document.createElement('div');
+            rain.classList.add('rain');
+            rain.style.left = Math.random() * 100 + 'vw';
+            rain.style.animationDuration = (Math.random() * 0.5 + 0.5) + 's';
+            rain.style.opacity = Math.random();
+            document.body.appendChild(rain);
+        }
+    </script>
+</body>
+</html>
