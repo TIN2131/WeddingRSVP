@@ -79,7 +79,7 @@
         }
 
         input[type="text"], select {
-            width: 100%;
+            width: calc(100% + 2px);
             padding: 1vh;
             border: 1px solid #A26E23;
             border-radius: 4px;
@@ -87,6 +87,7 @@
             font-size: 3vw;
             color: #4a4235;
             background-color: rgba(255, 255, 255, 0.7);
+            margin-left: -1px;
         }
 
         .radio-group {
@@ -128,7 +129,7 @@
         .success-message {
             display: none;
             text-align: center;
-            color: #4a8a47;
+            color: #A26E23;
             margin-top: 2vh;
             font-size: 3vw;
             font-weight: 600;
@@ -136,8 +137,10 @@
 
         @media (min-width: 768px) {
             h1 { font-size: 40px; }
-            .deadline, label, input[type="text"], select, .radio-label { font-size: 18px; }
+            .deadline { font-size: 18px; }
+            label, input[type="text"], select, .radio-label { font-size: 18px; }
             button { font-size: 20px; }
+            .success-message { font-size: 18px; }
         }
 
         @media (max-width: 767px) and (orientation: landscape) {
@@ -146,8 +149,10 @@
                 padding: 2vh 5vw;
             }
             h1 { font-size: 5vw; }
-            .deadline, label, input[type="text"], select, .radio-label { font-size: 2.5vw; }
+            .deadline { font-size: 2.5vw; }
+            label, input[type="text"], select, .radio-label { font-size: 2.5vw; }
             button { font-size: 3vw; }
+            .success-message { font-size: 2.5vw; }
         }
     </style>
 </head>
