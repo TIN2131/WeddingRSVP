@@ -210,14 +210,31 @@
         </div>
     </div>
 
-    <script>
-        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var formData = new FormData(this);
-            console.log(Object.fromEntries(formData));
-            this.style.display = 'none';
-            document.querySelector('.success-message').style.display = 'block';
-        });
-    </script>
+<script>
+document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var formData = new FormData(this);
+  var data = {
+    name: formData.get('name'),
+    response: formData.get('response'),
+    guests: formData.get('guests')
+  };
+  
+  fetch('https://script.google.com/macros/s/AKfycbzIYtDgKVYAUZPR0Fjfmt9oqjij4Vj7ZV5Lg-lkPyIuzA5ewMMrei2HN2vNKAB5iAHn/exec', {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => response.text())
+  .then(result => {
+    console.log(result);
+    this.style.display = 'none';
+    document.querySelector('.success-message').style.display = 'block';
+  })
+  .catch(error => console.error('Error:', error));
+});
+</script>
 </body>
 </html>
