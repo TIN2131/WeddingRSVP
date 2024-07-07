@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elegant RSVP</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body, html {
             font-family: 'Montserrat', sans-serif;
-            color: #635547;
+            color: #4a4235;
             margin: 0;
             padding: 0;
             height: 100%;
@@ -49,7 +49,7 @@
 
         h1 {
             font-family: 'Cinzel', serif;
-            font-size: 6vw;
+            font-size: 8vw;
             text-align: center;
             margin: 0 0 2vh;
             color: #A26E23;
@@ -57,8 +57,9 @@
 
         .deadline {
             text-align: center;
-            font-size: 2.5vw;
+            font-size: 3vw;
             margin-bottom: 2vh;
+            font-weight: 600;
         }
 
         form {
@@ -73,7 +74,8 @@
         label {
             display: block;
             margin-bottom: 1vh;
-            font-size: 2.5vw;
+            font-size: 3vw;
+            font-weight: 600;
         }
 
         input[type="text"], select {
@@ -82,8 +84,8 @@
             border: 1px solid #A26E23;
             border-radius: 4px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.5vw;
-            color: #635547;
+            font-size: 3vw;
+            color: #4a4235;
             background-color: rgba(255, 255, 255, 0.7);
         }
 
@@ -104,7 +106,7 @@
         }
 
         .radio-label {
-            font-size: 2.5vw;
+            font-size: 3vw;
         }
 
         button {
@@ -113,9 +115,10 @@
             border: none;
             padding: 1.5vh;
             border-radius: 4px;
-            font-size: 3vw;
+            font-size: 3.5vw;
             cursor: pointer;
             transition: background-color 0.3s;
+            font-weight: 600;
         }
 
         button:hover {
@@ -127,13 +130,14 @@
             text-align: center;
             color: #4a8a47;
             margin-top: 2vh;
-            font-size: 2.5vw;
+            font-size: 3vw;
+            font-weight: 600;
         }
 
         @media (min-width: 768px) {
-            h1 { font-size: 32px; }
-            .deadline, label, input[type="text"], select, .radio-label { font-size: 16px; }
-            button { font-size: 18px; }
+            h1 { font-size: 40px; }
+            .deadline, label, input[type="text"], select, .radio-label { font-size: 18px; }
+            button { font-size: 20px; }
         }
 
         @media (max-width: 767px) and (orientation: landscape) {
@@ -141,9 +145,9 @@
                 height: 90vh;
                 padding: 2vh 5vw;
             }
-            h1 { font-size: 4vw; }
-            .deadline, label, input[type="text"], select, .radio-label { font-size: 2vw; }
-            button { font-size: 2.5vw; }
+            h1 { font-size: 5vw; }
+            .deadline, label, input[type="text"], select, .radio-label { font-size: 2.5vw; }
+            button { font-size: 3vw; }
         }
     </style>
 </head>
@@ -152,7 +156,7 @@
         <div class="content-wrapper">
             <div class="container">
                 <h1>RSVP</h1>
-                <p class="deadline">Kindly reply by October 2, 2025</p>
+                <p class="deadline">Kindly reply by August 30th, 2024</p>
                 <form id="rsvpForm">
                     <div class="input-group">
                         <label for="name">Name / Nombre</label>
@@ -177,6 +181,11 @@
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
                         </select>
                     </div>
                     <button type="submit">Submit RSVP / Enviar RSVP</button>
