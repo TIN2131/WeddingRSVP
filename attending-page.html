@@ -215,6 +215,7 @@
         e.preventDefault();
         var form = this;
         var formData = new FormData(form);
+        var responseValue = formData.get('response');
         var url = 'https://script.google.com/macros/s/AKfycbwq7HWRK4YMuxxkkjcXCvnw4WaF7Ke5aOJvjyY2MR0LQa2q1vtxuBucZYFoM3XdBCLHYA/exec';
         
         // Disable the submit button to prevent multiple submissions
@@ -248,9 +249,13 @@
         // Handle the response
         iframe.onload = function() {
             document.body.removeChild(iframe);
-            form.style.display = 'none';
-            document.querySelector('.deadline').style.display = 'none'; // Hide the deadline message
-            document.querySelector('.success-message').style.display = 'block';
+            if (responseValue === 'decline') {
+                window.location.href = 'https://tin2131.github.io/WeddingRSVP/not-attending-page.html';
+            } else {
+                form.style.display = 'none';
+                document.querySelector('.deadline').style.display = 'none'; // Hide the deadline message
+                document.querySelector('.success-message').style.display = 'block';
+            }
         };
 
         iframe.onerror = function() {
