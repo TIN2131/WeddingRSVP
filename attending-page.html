@@ -213,30 +213,50 @@
     <script>
     document.getElementById('rsvpForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        var formData = new FormData(this);
-        var data = {
-            name: formData.get('name'),
-            response: formData.get('response'),
-            guests: formData.get('guests')
-        };
+        var form = this;
+        var formData = new FormData(form);
+        var url = 'https://script.google.com/macros/s/AKfycbwq7HWRK4YMuxxkkjcXCvnw4WaF7Ke5aOJvjyY2MR0LQa2q1vtxuBucZYFoM3XdBCLHYA/exec';
         
-        fetch('https://script.google.com/macros/s/AKfycbwq7HWRK4YMuxxkkjcXCvnw4WaF7Ke5aOJvjyY2MR0LQa2q1vtxuBucZYFoM3XdBCLHYA/exec', {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => response.text())
-        .then(result => {
-            console.log(result);
-            this.style.display = 'none';
+        // Disable the submit button to prevent multiple submissions
+        form.querySelector('button[type="submit"]').disabled = true;
+
+        // Create a hidden iframe
+        var iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+
+        // Create a form inside the iframe
+        var iframeDoc = iframe.contentWindow.document;
+        var iframeForm = iframeDoc.createElement('form');
+        iframeForm.method = 'POST';
+        iframeForm.action = url;
+
+        // Append form data to the iframe form
+        for (var pair of formData.entries()) {
+            var input = iframeDoc.createElement('input');
+            input.type = 'hidden';
+            input.name = pair[0];
+            input.value = pair[1];
+            iframeForm.appendChild(input);
+        }
+
+        iframeDoc.body.appendChild(iframeForm);
+
+        // Submit the form
+        iframeForm.submit();
+
+        // Handle the response
+        iframe.onload = function() {
+            document.body.removeChild(iframe);
+            form.style.display = 'none';
             document.querySelector('.success-message').style.display = 'block';
-        })
-        .catch(error => {
-            console.error('Error:', error);
+        };
+
+        iframe.onerror = function() {
+            document.body.removeChild(iframe);
+            form.querySelector('button[type="submit"]').disabled = false;
             alert('An error occurred. Please try again.');
-        });
+        };
     });
     </script>
 </body>
