@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elegant RSVP</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <style>
         body, html {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Montserrat', sans-serif;
             color: #4a4235;
             margin: 0;
             padding: 0;
@@ -48,7 +48,7 @@
         }
 
         h1 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 12vw;
             text-align: center;
             margin: 0 0 2vh;
@@ -56,11 +56,18 @@
             font-weight: bold;
         }
 
+        .rsvp-special {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.5em; /* Adjust size as needed */
+            font-weight: 600; /* Match boldness */
+        }
+
         .deadline {
             text-align: center;
             font-size: 3vw;
             margin-bottom: 2vh;
-            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
         }
 
         form {
@@ -76,7 +83,8 @@
             display: block;
             margin-bottom: 1vh;
             font-size: 3vw;
-            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
         }
 
         input[type="text"] {
@@ -84,6 +92,7 @@
             padding: 1vh;
             border: 1px solid #A26E23;
             border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
             font-size: 3vw;
             color: #4a4235;
             background-color: rgba(255, 255, 255, 0.7);
@@ -94,6 +103,7 @@
             padding: 1vh;
             border: 1px solid #A26E23;
             border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
             font-size: 3vw;
             color: #4a4235;
             background-color: rgba(255, 255, 255, 0.7);
@@ -117,7 +127,8 @@
 
         .radio-label {
             font-size: 3vw;
-            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
         }
 
         .hidden {
@@ -133,7 +144,8 @@
             font-size: 3.5vw;
             cursor: pointer;
             transition: background-color 0.3s;
-            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
         }
 
         button:hover {
@@ -146,7 +158,8 @@
             color: #A26E23;
             margin-top: 2vh;
             font-size: 3vw;
-            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
         }
 
         @media (min-width: 768px) {
@@ -174,7 +187,7 @@
     <div class="background-container">
         <div class="content-wrapper">
             <div class="container">
-                <h1>RSVP</h1>
+                <h1><span class="rsvp-special">R</span>SVP</h1>
                 <p class="deadline">Kindly reply by August 30th, 2024</p>
                 <form id="rsvpForm">
                     <div class="input-group">
@@ -255,7 +268,7 @@
         form.querySelector('button[type="submit"]').disabled = true;
 
         // Create a hidden iframe
-                var iframe = document.createElement('iframe');
+        var iframe = document.createElement('iframe');
         iframe.style.display = 'none';
         document.body.appendChild(iframe);
 
@@ -288,7 +301,6 @@
                 form.style.display = 'none';
                 document.querySelector('.deadline').style.display = 'none'; // Hide the deadline message
                 document.querySelector('.success-message').style.display = 'block';
-                document.querySelector('.content-wrapper').style.paddingTop = '20vh'; // Adjust padding to prevent overlap with rings
             }
         };
 
@@ -301,4 +313,3 @@
     </script>
 </body>
 </html>
-
