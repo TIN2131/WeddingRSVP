@@ -120,6 +120,10 @@
             font-size: 3vw;
         }
 
+        .hidden {
+            display: none;
+        }
+
         button {
             background-color: #A26E23;
             color: white;
@@ -187,22 +191,39 @@
                             <label for="decline" class="radio-label">Sorry, I can't make it. / Lo siento, no podré asistir.</label>
                         </div>
                     </div>
-                    <div class="input-group">
-                        <label for="guests">Number of guests / Número de invitados</label>
-                        <select id="guests" name="guests" required>
-                            <option value="">Select / Seleccionar</option>
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
+                    <div id="guestDropdowns" class="hidden">
+                        <div class="input-group">
+                            <label for="adults">Number of adults / Número de adultos</label>
+                            <select id="adults" name="adults">
+                                <option value="">Select / Seleccionar</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="children">Number of children / Número de niños</label>
+                            <select id="children" name="children">
+                                <option value="">Select / Seleccionar</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
                     </div>
                     <button type="submit">Submit RSVP / Enviar RSVP</button>
                 </form>
@@ -212,6 +233,17 @@
     </div>
 
     <script>
+    document.querySelectorAll('input[name="response"]').forEach(function(elem) {
+        elem.addEventListener('change', function() {
+            var guestDropdowns = document.getElementById('guestDropdowns');
+            if (this.value === 'accept') {
+                guestDropdowns.classList.remove('hidden');
+            } else {
+                guestDropdowns.classList.add('hidden');
+            }
+        });
+    });
+
     document.getElementById('rsvpForm').addEventListener('submit', function(e) {
         e.preventDefault();
         var form = this;
