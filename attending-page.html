@@ -49,16 +49,16 @@
 
         h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 12vw;
+            font-size: 8vw; /* Reduced size */
             text-align: center;
-            margin: 0 0 2vh;
+            margin: 2vh 0 2vh; /* Shifted down */
             color: #A26E23;
             font-weight: bold;
         }
 
         .rsvp-special {
             font-family: 'Great Vibes', cursive;
-            font-size: 1.5em;
+            font-size: 1.2em; /* Keep the R bigger */
             font-weight: 600;
         }
 
@@ -167,7 +167,7 @@
         }
 
         @media (min-width: 768px) {
-            h1 { font-size: 72px; }
+            h1 { font-size: 54px; } /* Adjusted size for larger screens */
             .deadline { font-size: 18px; }
             label, input[type="text"], select, .radio-label { font-size: 18px; }
             button { font-size: 20px; }
@@ -188,7 +188,6 @@
     </style>
 </head>
 <body>
-    <!-- The rest of the HTML remains the same -->
     <div class="background-container">
         <div class="content-wrapper">
             <div class="container">
@@ -251,7 +250,6 @@
     </div>
 
     <script>
-    // The JavaScript remains unchanged
     document.querySelectorAll('input[name="response"]').forEach(function(elem) {
         elem.addEventListener('change', function() {
             var guestDropdowns = document.getElementById('guestDropdowns');
