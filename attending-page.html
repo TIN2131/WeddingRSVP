@@ -37,7 +37,7 @@
             max-height: 600px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start; /* Changed from center to flex-start */
             padding: 5vh 5vw;
             box-sizing: border-box;
             overflow-y: auto;
@@ -45,6 +45,10 @@
 
         .container {
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Added this line */
+            min-height: 100%; /* Added this line */
         }
 
         h1 {
@@ -72,6 +76,7 @@
         form {
             display: flex;
             flex-direction: column;
+            flex-grow: 1; /* Added this line */
         }
 
         .input-group {
@@ -143,6 +148,7 @@
             transition: background-color 0.3s;
             font-family: 'Playfair Display', serif;
             font-weight: 600;
+            margin-top: auto; /* Added this line */
         }
 
         button:hover {
