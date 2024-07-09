@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elegant RSVP</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body, html {
             font-family: 'Montserrat', sans-serif;
@@ -21,7 +21,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://github.com/TIN2131/WeddingRSVP/blob/main/Inv_Background_Canva_v6.png?raw=true');
+            background-image: url('https://github.com/TIN2131/WeddingRSVP/blob/main/Inv_Background_Canva_v3.png?raw=true');
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
@@ -48,7 +48,7 @@
         }
 
         h1 {
-            font-family: 'Cinzel', serif;
+            font-family: 'Dancing Script', cursive;
             font-size: 8vw;
             text-align: center;
             margin: 0 0 2vh;
@@ -60,6 +60,7 @@
             font-size: 3vw;
             margin-bottom: 2vh;
             font-weight: 600;
+            font-family: 'Dancing Script', cursive;
         }
 
         form {
@@ -76,6 +77,7 @@
             margin-bottom: 1vh;
             font-size: 3vw;
             font-weight: 600;
+            font-family: 'Dancing Script', cursive;
         }
 
         input[type="text"] {
@@ -118,6 +120,7 @@
 
         .radio-label {
             font-size: 3vw;
+            font-family: 'Dancing Script', cursive;
         }
 
         .hidden {
@@ -134,6 +137,7 @@
             cursor: pointer;
             transition: background-color 0.3s;
             font-weight: 600;
+            font-family: 'Dancing Script', cursive;
         }
 
         button:hover {
@@ -147,6 +151,7 @@
             margin-top: 2vh;
             font-size: 3vw;
             font-weight: 600;
+            font-family: 'Dancing Script', cursive;
         }
 
         @media (min-width: 768px) {
@@ -227,7 +232,7 @@
                     </div>
                     <button type="submit">Submit RSVP / Enviar RSVP</button>
                 </form>
-                <div class="success-message">Thank you for your response! / ¡Gracias por su respuesta!</div>
+                <div class="success-message">Thank you for your response! / ¡Gracias por su respuesta! ❤️</div>
             </div>
         </div>
     </div>
@@ -249,7 +254,7 @@
         var form = this;
         var formData = new FormData(form);
         var responseValue = formData.get('response');
-        var url = 'https://script.google.com/macros/s/AKfycby0JBgbp3OlY3JzUKCH5GqWRe44l8xfcitH6-5afIibJ-620BJHMv03MckwjNv8heSWwQ/exec';
+        var url = 'https://script.google.com/macros/s/AKfycbwq7HWRK4YMuxxkkjcXCvnw4WaF7Ke5aOJvjyY2MR0LQa2q1vtxuBucZYFoM3XdBCLHYA/exec';
         
         // Disable the submit button to prevent multiple submissions
         form.querySelector('button[type="submit"]').disabled = true;
