@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elegant RSVP</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         body, html {
             font-family: 'Playfair Display', serif;
@@ -21,7 +21,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://github.com/TIN2131/WeddingRSVP/blob/main/Inv_Background_Canva_v6.png?raw=true');
+            background-image: url('https://github.com/TIN2131/WeddingRSVP/blob/main/Inv_Background_Canva_v5.png?raw=true');
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
@@ -56,18 +56,11 @@
             font-weight: bold;
         }
 
-        .rsvp-special {
-            font-family: 'Great Vibes', cursive;
-            font-size: 1.5em; /* Adjust size as needed */
-            font-weight: normal;
-        }
-
         .deadline {
             text-align: center;
             font-size: 3vw;
             margin-bottom: 2vh;
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         form {
@@ -83,8 +76,7 @@
             display: block;
             margin-bottom: 1vh;
             font-size: 3vw;
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         input[type="text"] {
@@ -92,7 +84,6 @@
             padding: 1vh;
             border: 1px solid #A26E23;
             border-radius: 4px;
-            font-family: 'Playfair Display', serif;
             font-size: 3vw;
             color: #4a4235;
             background-color: rgba(255, 255, 255, 0.7);
@@ -103,7 +94,6 @@
             padding: 1vh;
             border: 1px solid #A26E23;
             border-radius: 4px;
-            font-family: 'Playfair Display', serif;
             font-size: 3vw;
             color: #4a4235;
             background-color: rgba(255, 255, 255, 0.7);
@@ -127,8 +117,7 @@
 
         .radio-label {
             font-size: 3vw;
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .hidden {
@@ -144,8 +133,7 @@
             font-size: 3.5vw;
             cursor: pointer;
             transition: background-color 0.3s;
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         button:hover {
@@ -158,8 +146,7 @@
             color: #A26E23;
             margin-top: 2vh;
             font-size: 3vw;
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         @media (min-width: 768px) {
@@ -187,7 +174,7 @@
     <div class="background-container">
         <div class="content-wrapper">
             <div class="container">
-                <h1><span class="rsvp-special">R</span>SVP</h1>
+                <h1>RSVP</h1>
                 <p class="deadline">Kindly reply by August 30th, 2024</p>
                 <form id="rsvpForm">
                     <div class="input-group">
@@ -257,7 +244,7 @@
         });
     });
 
-      document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+    document.getElementById('rsvpForm').addEventListener('submit', function(e) {
         e.preventDefault();
         var form = this;
         var formData = new FormData(form);
@@ -268,7 +255,7 @@
         form.querySelector('button[type="submit"]').disabled = true;
 
         // Create a hidden iframe
-        var iframe = document.createElement('iframe');
+                var iframe = document.createElement('iframe');
         iframe.style.display = 'none';
         document.body.appendChild(iframe);
 
@@ -314,3 +301,4 @@
     </script>
 </body>
 </html>
+
