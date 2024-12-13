@@ -9,28 +9,31 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background: linear-gradient(to bottom right, #f0f4f8, #c2e0f4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    /* A soft, romantic gradient background */
+    background: linear-gradient(120deg, #fdf1ed, #fff5f1, #fce2e0);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    overflow: hidden;
+    position: relative;
   }
 
+  /* Soft gradient animation */
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Container for the iframe */
   .container {
     width: 90%;
     max-width: 500px;
-    background: rgba(255,255,255,0.9);
+    margin: 10vh auto 5vh;
+    background: rgba(255,255,255,0.85);
     border-radius: 12px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.1);
     overflow: hidden;
-    padding: 20px;
-  }
-
-  .container h1 {
-    text-align: center;
-    font-size: 1.4em;
-    margin-bottom: 1em;
-    color: #333;
+    padding: 15px;
   }
 
   /* Responsive embedding container */
@@ -57,23 +60,69 @@
     margin: 0;
   }
 
-  .container a {
+  a {
     display: block;
     text-align: center;
     text-decoration: none;
-    color: #333;
+    color: #444;
     font-size: 0.9em;
     margin-top: 10px;
   }
 
-  .container a:hover {
+  a:hover {
     text-decoration: underline;
   }
+
+  /* Floating hearts animation */
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle at 40% 40%, #ffafc6 40%, #ff7aa8 95%);
+    transform: rotate(-45deg);
+    border-radius: 50% 50% 0 50%;
+    opacity: 0.8;
+    animation: floatHearts 10s linear infinite;
+  }
+
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle at 40% 40%, #ffafc6 40%, #ff7aa8 95%);
+    border-radius: 50%;
+  }
+
+  .heart::before {
+    top: -50%;
+    left: 0;
+  }
+
+  .heart::after {
+    left: 50%;
+    top: 0;
+  }
+
+  @keyframes floatHearts {
+    0% {
+      transform: translateY(0) rotate(-45deg);
+      opacity: 0.8;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-120vh) rotate(-45deg);
+      opacity: 0;
+    }
+  }
+
 </style>
 </head>
 <body>
   <div class="container">
-    <h1>Your Wedding Invitation</h1>
     <div class="embed-container">
       <iframe loading="lazy"
         src="https://www.canva.com/design/DAGY8imB5jE/ey7-kxvTh9DbF5dkvAFe-g/watch?embed" 
@@ -81,9 +130,23 @@
         allow="fullscreen">
       </iframe>
     </div>
-    <a href="https://www.canva.com/design/DAGY8imB5jE/ey7-kxvTh9DbF5dkvAFe-g/watch?utm_content=DAGY8imB5jE&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener">
-      View the Invitation on Canva
+    <a href="https://www.canva.com/design/DAGY8imB5jE/ey7-kxvTh9DbF5dkvAFe-g/watch?utm_content=DAGY8imB5jE&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
+       target="_blank" rel="noopener">
+       The Day by TIN Inc
     </a>
   </div>
+
+  <script>
+    // Generate floating hearts
+    for (let i = 0; i < 15; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.bottom = '-10px';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      heart.style.animationDuration = (8 + Math.random()*4) + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
 </body>
 </html>
